@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Allan J. Corpuz Jr.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Allan<span>.</span></a>
+            <button class="nav-toggle" id="navToggle">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h1 class="page-title">My Projects</h1>
+            <p class="page-subtitle">A showcase of my development work and contributions</p>
+
+            <div class="projects-grid">
+                <!-- Project 1: TugmaJobs (Featured) -->
+                <div class="project-card featured">
+                    <div class="project-image" onclick="openProjectModal('assets/images/projects/tugma.png')">
+                        <img src="assets/images/projects/tugma.png" alt="TugmaJobs">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>TugmaJobs</h3>
+                        <p class="project-subtitle">Verified Profiling and Job Matching Platform</p>
+                        <p class="project-description">
+                            A comprehensive job matching platform for job seekers and employers in Sta. Cruz,
+                            Davao del Sur. The system uses <strong>K-Means Clustering algorithm</strong> to
+                            intelligently match candidates with suitable job opportunities. Features include
+                            <strong>KYC Verification</strong> to ensure user authenticity and build trust
+                            between employers and job seekers.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">K-Means Clustering</span>
+                            <span class="tech-tag">KYC Verification</span>
+                        </div>
+                        <div class="project-role">
+                            <i class="fas fa-user-edit"></i>
+                            <span>Lead Technical Writer & Co-Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Inventory Management and Online Ordering System -->
+                <div class="project-card">
+                    <div class="project-image" onclick="openProjectModal('assets/images/projects/Yummie Burgs.png')">
+                        <img src="assets/images/projects/Yummie Burgs.png" alt="Inventory Management and Online Ordering System">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Inventory Management and Online Ordering System</h3>
+                        <p class="project-subtitle">Web-Based Restaurant System</p>
+                        <p class="project-description">
+                            A comprehensive web-based system that combines inventory management with online
+                            food ordering capabilities. The system enables customers to browse menus and place
+                            orders online, while providing real-time inventory tracking, stock management,
+                            and order processing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Project Image Preview -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+            <img src="" alt="Project" id="projectModalImage">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Allan J. Corpuz Jr. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function openProjectModal(imageSrc) {
+            const modal = document.getElementById('projectModal');
+            const modalImage = document.getElementById('projectModalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.id === 'projectModal') {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
